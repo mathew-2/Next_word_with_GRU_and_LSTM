@@ -5,13 +5,13 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 # Load the LSTM model
-lstm_model = load_model('/Users/mathew/Documents/practice_stuff/LSTM_Project/LSTM_RNN/next_word_prediction_model.h5')
+lstm_model = load_model('next_word_prediction_model.h5')
 
 # Load the GRU model
-gru_model = load_model('/Users/mathew/Documents/practice_stuff/LSTM_Project/LSTM_RNN/next_word_model_with_GRU.h5')
+gru_model = load_model('next_word_model_with_GRU.h5')
 
 # Load the tokenizer
-with open('/Users/mathew/Documents/practice_stuff/LSTM_Project/LSTM_RNN/tokenizer.pickle', 'rb') as handle:
+with open('tokenizer.pickle', 'rb') as handle:
     tokenizer = pickle.load(handle)
 
 def predict_next_word(model, tokenizer, text, max_sequence_len):
